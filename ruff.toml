@@ -1,0 +1,104 @@
+# =========================
+# Ruff configuration
+# =========================
+
+line-length = 120
+src = ["hover_inspector", "tests"]
+exclude = ["pyproject.toml"]
+
+[format]
+quote-style = "double"
+indent-style = "space"
+docstring-code-format = false
+
+[lint]
+select = [
+    "B",       # bugbear
+    "D",       # pydocstyle
+    "E",       # pycodestyle
+    "F",       # pyflakes
+    "FA100",   # add future annotations
+    "I",       # isort
+    "PGH004",  # Use specific rule codes when using noqa
+    "PIE",     # flake8-pie
+    "PLC",     # pylint convention
+    "PLE",     # pylint error
+    "PLR",     # pylint refactor
+    "PLR1714", # Consider merging multiple comparisons
+    "PLW",     # pylint warning
+    "PYI",     # flake8-pyi
+    "RUF",     # ruff
+    "T100",    # flake8-debugger
+    "UP",      # pyupgrade
+    "W",       # pycodestyle
+]
+
+ignore = [
+    # bugbear ignore
+    "E402",
+    "B004",
+    "B007",
+    "B009",
+    "B010",
+    "B011",
+    "B028",
+
+    # pydocstyle ignore
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D105",
+    "D106",
+    "D107",
+    "D205",
+    "D209",
+    "D400",
+    "D401",
+    "D402",
+    "D404",
+    "D415",
+    "E721",
+
+    # pylint ignore
+    "PLC0105",
+    "PLC0414",
+    "PLR0124",
+    "PLR0133",
+    "PLR0402",
+    "PLR0911",
+    "PLR0912",
+    "PLR0913",
+    "PLR0915",
+    "PLR2004",
+    "PLR2044",
+    "PLR5501",
+    "PLW0120",
+    "PLW0603",
+    "PLW2901",
+
+    "RUF012",
+    "RUF001",
+    "B904",
+    "I001",
+    "F405",
+]
+
+extend-safe-fixes = ["UP006", "UP007", "UP035"]
+
+[lint.isort]
+combine-as-imports = true
+force-single-line = true
+force-sort-within-sections = true
+lines-after-imports = 2
+order-by-type = false
+
+[lint.pycodestyle]
+max-line-length = 120
+
+[lint.pydocstyle]
+convention = "pep257"
+
+[lint.pyupgrade]
+keep-runtime-typing = false
